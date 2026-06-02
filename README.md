@@ -3,4 +3,4 @@ Before you try the program you need to install the packages that are in the requ
 so you need to go to your terminal inside the route of the file that requirements.txt are and
 type or copy the bash with that now you can start usin the program without problems.
 
-'''pip install -r .\requirements.txt'''
+```pip install -r .\requirements.txt```
