@@ -1,5 +1,5 @@
-# Aviso
-Antes de que uses este programa debes instalar la carpeta de requirements.txt para que no susedan problemas a la hora de correr el programa para eso ve a tu terminal y dirigente a donde se encuentra el archivo de requirements.txt despues copia este comando para crear tu entorno virtual ```python -m venv [nombre_del_entorno]``` despues activalo con ```[nombre_del_entonro]/bin/activate``` (si quieres desactivarlo usa solo ```deactivate```) mientras esta activo el entorno usa el siguente comando y se te descargaran todos los paquetes necesarios para iniciar el programa sin problemas.
+# Aviso(Windows)
+Antes de que uses este programa debes instalar la carpeta de requirements.txt para que no susedan problemas a la hora de correr el programa para eso ve a tu terminal y dirigente a donde se encuentra el archivo de requirements.txt despues copia este comando para crear tu entorno virtual ```python -m venv [nombre_del_entorno]``` despues activalo con ```[nombre_del_entonro]\Scripts\activate.bat``` (si quieres desactivarlo usa solo ```deactivate```) mientras esta activo el entorno usa el siguente comando y se te descargaran todos los paquetes necesarios para iniciar el programa sin problemas.
 
 ```bash copy
 pip install -r .\requirements.txt
@@ -9,6 +9,20 @@ Por ultimo NO TE SALGAS DEL ENTORNO VISUAL usa este comando para iniciar el prog
 
 ```bash copy
 python reescribir_informacion.py
+```
+
+
+# Aviso(Linux)
+Antes de que uses este programa debes instalar la carpeta de requirements.txt para que no susedan problemas a la hora de correr el programa para eso ve a tu terminal y dirigente a donde se encuentra el archivo de requirements.txt despues copia este comando para crear tu entorno virtual ```python3 -m venv [nombre_del_entorno]``` despues activalo con ```[nombre_del_entonro]/bin/activate``` (si quieres desactivarlo usa solo ```deactivate```) mientras esta activo el entorno usa el siguente comando y se te descargaran todos los paquetes necesarios para iniciar el programa sin problemas.
+
+```bash copy
+pip install -r .\requirements.txt
+```
+
+Por ultimo NO TE SALGAS DEL ENTORNO VISUAL usa este comando para iniciar el programa.
+
+```bash copy
+python3 reescribir_informacion.py
 ```
 
 # Copiar plantilla de estructura
