@@ -14,7 +14,7 @@ Si quieres tener la plantilla de la estructura del proyecto con los archivos de 
 pip install cookiecutter
 ```
 
-Al ya tenerlo usa este otro comando para empezar la copia de plantilla. Antes de hacerla te pedira un par de cosas debes de responder todo lo que te pida ```cookiecutter``` antes de crear la copia de la paltilla.
+Al ya tenerlo usa este otro comando para empezar la copia de plantilla. Antes de hacerla te pedira un par de cosas debes de responder todo lo que te pida ```cookiecutter``` antes de crear la copia de la estructura.
 
 ```bash copy
 cookiecutter https://github.com/ianaoperezliska-eng/work_proyects.git
