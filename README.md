@@ -26,7 +26,7 @@ python3 reescribir_informacion.py
 ```
 
 # Copiar plantilla de estructura
-Si quieres tener la plantilla de la estructura del proyecto con los archivos de este utiliza ```cookiecutter```. Si no lo tienes instalado ve a tu terminal y copia este comando:
+Si quieres tener la plantilla de la estructura del proyecto con los archivos de este utiliza ```cookiecutter```. Si no lo tienes instalado ve a tu terminal entra o crea un entorno virtual ```python -m venv [nombre_del_entorno]``` y activalo despues copia este comando:
 
 ```bash copy
 pip install cookiecutter
@@ -37,4 +37,3 @@ Al ya tenerlo usa este otro comando para empezar la copia de plantilla. Antes de
 ```bash copy
 cookiecutter https://github.com/ianaoperezliska-eng/work_proyects.git
 ```
-
