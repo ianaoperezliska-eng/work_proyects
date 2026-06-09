@@ -85,7 +85,7 @@ class app(Tk):
 
                 doc_file = DT(doc)
                 doc_file.render(reescrituras)#hace todas las reescrituras
-                doc_file.save(ruta + f"/declaration_{fila["license_plate_in_numbers"]} rev.docx")# guarda el documento con un nombre específico
+                doc_file.save(ruta + f"/declaration_{fila['license_plate_in_numbers']}.docx")# guarda el documento con un nombre específico
 
     #declaración para persona jurídica
     def reescribirentity(self):
@@ -147,7 +147,7 @@ class app(Tk):
 
                 doc_file = DT(doc)
                 doc_file.render(reescrituras)#hace todas las reescrituras
-                doc_file.save(ruta + f"/declaration_{fila["license_plate_in_numbers"]} rev.docx")# guarda el documento con un nombre específico
+                doc_file.save(ruta + f"/declaration_{fila['license_plate_in_numbers']}.docx")# guarda el documento con un nombre específico
 
     #funcion para pasar las horas a letras
     def hora(self,h:str):
