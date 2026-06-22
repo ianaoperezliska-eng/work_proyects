@@ -1,5 +1,4 @@
-docxtpl==0.20.2
-num2words==0.5.14
 pandas==3.0.2
 tk==0.1.0
 openpyxl==3.1.5
+PyPDF2==3.0.1
