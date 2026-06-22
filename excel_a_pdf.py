@@ -67,13 +67,16 @@ class App(Tk):
                 def var(col):
                     val = fila.iloc[col]
                     if pd.isna(val): return ''
-                    if hasattr(val, 'strftime'): return val.strftime('%d/%m/%Y')
+                    # if hasattr(val, 'strftime'): return val.strftime('%d/%m/%Y')
                     return str(val).strip()
 
                 reescrituras = {
                     # página 1 de la declaración jurada
                     'No de Certificado':var(2),
-                    'Texto4':var(4),   # nombre empresa (encabezado)
+                    'Texto4':'',
+                    'Texto3': var(25)[:2],
+                    'Texto1': var(25)[3:-5],
+                    'Texto2': var(25)[6:],
                     'Nombre de la Sociedad Mercantil Empresa Mercantil o Propietario':var(4),
                     'Dirección fiscal':var(22),
                     'Correo electrónico':var(20),
@@ -81,16 +84,16 @@ class App(Tk):
                     'Número de Identificación Tributaria NIT':var(19),
                     'No tarjeta de circulación':var(47),
                     'No código correlativo':var(85),
-                    'Texto5':var(53),  # propietario vehículo
+                    'Texto5':var(53),
                     'Código único de identificación CUI':var(52),
                     'Uso':var(54),
                     'Placa':var(55),
                     'Tipo':var(49),
-                    'Texto6':var(56),  # marca
+                    'Texto6':var(56),
                     'Línea':var(57),
                     'Modelo':var(58),
                     'Chasis':var(59),
-                    'Texto7':var(60),  # VIN
+                    'Texto7':var(60),
                     'Serie':var(61),
                     'Motor':var(62),
                     'CC':var(66),
@@ -99,7 +102,6 @@ class App(Tk):
                     'Ejes':var(64),
                     'Color':var(50),
                     'Toneladas':var(67),
-                    'Modelo_2':var(85),  # código correlativo SLV
                     'Tipo de sistema':var(87),
                     'Número de Registro como implementador proporcionado por Provial':var(2),
                     'No Folio':f'Reg:{var(6)} Folio:{var(7)} Libro:{var(8)}',
@@ -118,11 +120,22 @@ class App(Tk):
                     'No teléfonos_2':var(43),
 
                     # página 2 de la declaración jurada
-                    'soy requerido por':var(9),
-                    'calidad':'Representante Legal',
-                    'entidad':var(4),
-                    'estando ubicados en':var(22),
-                    'correctos y exactos de no ser asi expresamente renuncia al fuero de su domicilio y se somete a las acciones judiciales':var(2),
+                    'calidad': var(25)[:2], # día
+                    'de': self.meses(var(25)[3:-5]), # mes
+                    'siendo las': var(25)[6:], # año
+                    #falta las horas 
+                    'entidad': var(9), # nombre del requerido
+                    'quien requiere de': var(22), #ubicacion
+                                                            
+                    #Sin llenar
+                    'soy requerido por': '',
+                    'estando ubicados en': var(18), # en su calidad
+                    'correctos y exactos de no ser asi expresamente renuncia al fuero de su domicilio y se somete a las acciones judiciales': var(2), # certificado de implementación del sistema limitador de velocidad, número...
+                    'mis servicios profesionales para prestar Declaración Jurada sobre hechos de su interés para lo cual se le hace saber las penas': var(4), # entidad
+
+
+
+
                 }
 
                 reader = PdfReader(pdf) # toma el PDF seleccionado como plantilla
@@ -137,6 +150,32 @@ class App(Tk):
 
         ms.showinfo('Listo', f'Se generaron {len(datos)} certificados en:\n{ruta}') # aviso de que se guardaron ya los archivos
 
-        
+    def meses(self, n:str):
+        meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
+
+        if n == '01':
+            return meses[0]
+        if n == '02':
+            return meses[1]
+        if n == '03':
+            return meses[2]
+        if n == '04':
+            return meses[3]
+        if n == '05':
+            return meses[4]
+        if n == '06':
+            return meses[5]
+        if n == '07':
+            return meses[6]
+        if n == '08':
+            return meses[7]
+        if n == '09':
+            return meses[8]
+        if n == '10':
+            return meses[9]
+        if n == '11':
+            return meses[10]
+        if n == '12':
+            return meses[11]
 
 App().mainloop()
