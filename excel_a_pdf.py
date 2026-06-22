@@ -126,12 +126,13 @@ class App(Tk):
                     #falta las horas 
                     'entidad': var(9), # nombre del requerido
                     'quien requiere de': var(22), #ubicacion
-                                                            
-                    #Sin llenar
-                    'soy requerido por': '',
                     'estando ubicados en': var(18), # en su calidad
                     'correctos y exactos de no ser asi expresamente renuncia al fuero de su domicilio y se somete a las acciones judiciales': var(2), # certificado de implementación del sistema limitador de velocidad, número...
                     'mis servicios profesionales para prestar Declaración Jurada sobre hechos de su interés para lo cual se le hace saber las penas': var(4), # entidad
+                                       
+                    #Sin llenar
+                    'soy requerido por': '', #hora
+                    
 
 
 
