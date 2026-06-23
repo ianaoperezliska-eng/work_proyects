@@ -72,7 +72,6 @@ class App(Tk):
 
                 reescrituras = {
                     # página 1 de la declaración jurada
-                    'No de Certificado':var(2),
                     'Texto4':'',
                     'Texto3': var(25)[:2],
                     'Texto1': var(25)[3:-5],
@@ -92,6 +91,7 @@ class App(Tk):
                     'Texto6':var(56),
                     'Línea':var(57),
                     'Modelo':var(58),
+                    'Modelo_2':var(58),
                     'Chasis':var(59),
                     'Texto7':var(60),
                     'Serie':var(61),
@@ -123,11 +123,10 @@ class App(Tk):
                     'calidad': var(25)[:2], # día
                     'de': self.meses(var(25)[3:-5]), # mes
                     'siendo las': var(25)[6:], # año
-                    #falta las horas 
                     'entidad': var(9), # nombre del requerido
                     'quien requiere de': var(22), #ubicacion
                     'estando ubicados en': var(18), # en su calidad
-                    'correctos y exactos de no ser asi expresamente renuncia al fuero de su domicilio y se somete a las acciones judiciales': var(2), # certificado de implementación del sistema limitador de velocidad, número...
+                    'correctos y exactos de no ser asi expresamente renuncia al fuero de su domicilio y se somete a las acciones judiciales': '', # certificado de implementación del sistema limitador de velocidad, número...
                     'mis servicios profesionales para prestar Declaración Jurada sobre hechos de su interés para lo cual se le hace saber las penas': var(4), # entidad
                     'requirente quien enterado de su contenido objeto válidez y demás efectos legales la acepta ratifica y firma': '10' # minutos despues
 
