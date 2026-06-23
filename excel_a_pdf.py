@@ -5,7 +5,7 @@
 #Procesos falntantes: ninguno
 #Historia:
 #         inicio: 19/6/2026
-#         fin: 22/6/2026
+#         fin: 23/6/2026
 
 #Entrada: documento excel a pasar y PDF a usar de plantilla
 #Proceso: 
@@ -129,13 +129,7 @@ class App(Tk):
                     'estando ubicados en': var(18), # en su calidad
                     'correctos y exactos de no ser asi expresamente renuncia al fuero de su domicilio y se somete a las acciones judiciales': var(2), # certificado de implementación del sistema limitador de velocidad, número...
                     'mis servicios profesionales para prestar Declaración Jurada sobre hechos de su interés para lo cual se le hace saber las penas': var(4), # entidad
-                                       
-                    #Sin llenar
-                    'soy requerido por': '', #hora
-                    
-
-
-
+                    'requirente quien enterado de su contenido objeto válidez y demás efectos legales la acepta ratifica y firma': '10' # minutos despues
 
                 }
 
