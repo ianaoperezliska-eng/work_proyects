@@ -5,7 +5,7 @@
 #Procesos falntantes: ninguno
 #Historia:
 #         inicio: 19/6/2026
-#         fin: 23/6/2026
+#         fin: 22/6/2026
 
 #Entrada: documento excel a pasar y PDF a usar de plantilla
 #Proceso: 
@@ -53,6 +53,7 @@ class App(Tk):
         df = pd.read_excel(excel, sheet_name='FORMATO PARA NUEVOS CODIGOS')
 
         # Solo filas con datos (columna 1 tiene el número de fila)
+        cvacio = 0
         filas_con_datos = []
         for _, fila in df.iterrows():
             valor_col1 = str(fila.iloc[1]).strip()
@@ -72,14 +73,20 @@ class App(Tk):
 
                 reescrituras = {
                     # página 1 de la declaración jurada
+
+                    #celdas principales
                     'Texto4':'',
                     'Texto3': var(25)[:2],
                     'Texto1': var(25)[3:-5],
                     'Texto2': var(25)[6:],
+
+                    # Datos de la empresa implementada
                     'Nombre de la Sociedad Mercantil Empresa Mercantil o Propietario':var(4),
                     'Dirección fiscal':var(22),
                     'Correo electrónico':var(20),
                     'No teléfonos':var(24),
+
+                    # Datos del vehículo implementado en velocidad
                     'Número de Identificación Tributaria NIT':var(19),
                     'No tarjeta de circulación':var(47),
                     'No código correlativo':var(85),
@@ -91,7 +98,6 @@ class App(Tk):
                     'Texto6':var(56),
                     'Línea':var(57),
                     'Modelo':var(58),
-                    'Modelo_2':var(58),
                     'Chasis':var(59),
                     'Texto7':var(60),
                     'Serie':var(61),
@@ -102,7 +108,12 @@ class App(Tk):
                     'Ejes':var(64),
                     'Color':var(50),
                     'Toneladas':var(67),
+
+                    #Especificaciones técnicas del sistema limitador de velocidad -SLV-
+                    'Modelo_2': var(58),
                     'Tipo de sistema':var(87),
+
+                    #Datos de la empresa implementadora
                     'Número de Registro como implementador proporcionado por Provial':var(2),
                     'No Folio':f'Reg:{var(6)} Folio:{var(7)} Libro:{var(8)}',
                     'No Regisro':var(11),
@@ -119,18 +130,22 @@ class App(Tk):
                     'Dirección':var(42),
                     'No teléfonos_2':var(43),
 
-                    # página 2 de la declaración jurada
+                    # página 2 de la declaración jurada del implementador
                     'calidad': var(25)[:2], # día
                     'de': self.meses(var(25)[3:-5]), # mes
                     'siendo las': var(25)[6:], # año
                     'entidad': var(9), # nombre del requerido
                     'quien requiere de': var(22), #ubicacion
                     'estando ubicados en': var(18), # en su calidad
-                    'correctos y exactos de no ser asi expresamente renuncia al fuero de su domicilio y se somete a las acciones judiciales': '', # certificado de implementación del sistema limitador de velocidad, número...
                     'mis servicios profesionales para prestar Declaración Jurada sobre hechos de su interés para lo cual se le hace saber las penas': var(4), # entidad
-                    'requirente quien enterado de su contenido objeto válidez y demás efectos legales la acepta ratifica y firma': '10' # minutos despues
+                    'requirente quien enterado de su contenido objeto válidez y demás efectos legales la acepta ratifica y firma': '10'
 
                 }
+
+                # Si no hay número de placa, se omite esta fila
+                if not var(55):
+                    cvacio+=1
+                    continue
 
                 reader = PdfReader(pdf) # toma el PDF seleccionado como plantilla
                 writer = PdfWriter()# crea un nuevo PDF para escribir la información
@@ -141,8 +156,9 @@ class App(Tk):
                 #guarda el pdf con todo ya cambiado
                 with open(f'{ruta}/Certificado_{var(1)}_{var(55)}.pdf', 'wb') as out:
                     writer.write(out)
-
-        ms.showinfo('Listo', f'Se generaron {len(datos)} certificados en:\n{ruta}') # aviso de que se guardaron ya los archivos
+        
+        guardados = len(datos) - cvacio
+        ms.showinfo('Listo', f'Se generaron {guardados} certificados en:\n{ruta}') # aviso de que se guardaron ya los archivos
 
     def meses(self, n:str):
         meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
