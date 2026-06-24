@@ -2,4 +2,4 @@ pandas==3.0.2
 tk==0.1.0
 openpyxl==3.1.5
 PyPDF2==3.0.1
-Pycryptodme==3.23.0
+Pycryptodome==3.23.0
